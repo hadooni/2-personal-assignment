@@ -1,0 +1,72 @@
+body {
+  background-color: aliceblue;
+}
+
+.container {
+  background-color: white;
+  margin: 30px 100px 0 100px;
+  padding: 30px 40px;
+}
+
+h1 {
+  text-align: center;
+  color: #0a007c;
+  text-shadow: 4px 4px white, 6px 6px #c3c3c3;
+}
+
+.container-box,
+form,
+.newCountry {
+  justify-items: center;
+  align-items: center;
+}
+
+.container-box {
+  display: grid;
+  grid-template-columns: repeat(4, 220px) 1fr 1fr;
+  font-size: 22px;
+  height: 40px;
+  font-weight: bold;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(4, 220px) 1fr 1fr;
+}
+
+input {
+  width: 200px;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #d6d6d6;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+form > button {
+  width: 120px;
+  height: 42px;
+  background-color: #ffd30f;
+  border: 2px solid #ffd30f;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.newCountry {
+  display: grid;
+  grid-template-columns: repeat(4, 220px) 1fr;
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.newCountry > button {
+  width: 50px;
+  height: 30px;
+  grid-column: 5 / 6;
+  background-color: #ed4646;
+  border: 3px solid #ed4646;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+}
