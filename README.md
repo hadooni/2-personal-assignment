@@ -4,7 +4,7 @@
 
 ## 프로젝트 구조
 - Vite로 React 프로젝트 셋업
-- index.html 하나의 파일안에 id 값이 root 인 <div>태그에 요소들 연결
+- index.html 하나의 파일안에 id 값이 root 인 div 태그에 요소들 연결
 - index.html 파일에서는 main.jsx 파일을 사용하고, main.jsx 파일에서는 App.jsx 파일을 불러와 사용
 
 ## 구현 기능
