@@ -1,4 +1,10 @@
-function Add(props) {
+function Add({
+  formValues,
+  handleChange,
+  handleAddCountry,
+  handleUpdateCountry,
+}) {
+  const { country, gold, silver, bronze } = formValues
   return (
     <>
       <div className="container-box">
@@ -9,30 +15,32 @@ function Add(props) {
       </div>
       <form>
         <input
+          id="country"
           type="text"
-          value={props.country}
-          onChange={(e) => {
-            props.setCountry(e.target.value);
-          }}
+          value={country}
+          onChange={handleChange}
           placeholder="국가 입력"
         />
         <input
+          id="gold"
           type="number"
-          value={props.gold}
-          onChange={(e) => props.setGold(e.target.value)}
+          value={gold}
+          onChange={handleChange}
         />
         <input
+          id="silver"
           type="number"
-          value={props.silver}
-          onChange={(e) => props.setSilver(e.target.value)}
+          value={silver}
+          onChange={handleChange}
         />
         <input
+          id="bronze"
           type="number"
-          value={props.bronze}
-          onChange={(e) => props.setbronze(e.target.value)}
+          value={bronze}
+          onChange={handleChange}
         />
-        <button onClick={props.handleAddCountry}>국가추가</button>
-        <button onClick={props.handleUpdateCountry}>업데이트</button>
+        <button onClick={handleAddCountry}>국가추가</button>
+        <button onClick={handleUpdateCountry}>업데이트</button>
       </form>
     </>
   );
