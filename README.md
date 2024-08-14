@@ -44,7 +44,7 @@
 ### 3. 수정
 <img width="1354" alt="image" src="https://github.com/user-attachments/assets/cae6e1dd-772c-4255-9308-da8ab2c5f972">
 
-- 기존에 추가된 국가와 동일한 국가의 메달 수를 버튼 클릭 하여 수정할 수 있습니다.
+- 기존에 추가된 국가와 동일한 국가의 메달 개수를 업데이트 버튼을 클릭하여 수정할 수 있습니다.
 
 ### 4. 삭제
 <img width="1354" alt="image" src="https://github.com/user-attachments/assets/c2a89862-6b9a-4d92-881f-4d8673798ee1">
