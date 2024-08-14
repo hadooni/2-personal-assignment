@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Countries from "./components/countries";
-import Add from "./components/Add";
+import InputForm from "./components/InputForm";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -47,7 +47,17 @@ function App() {
     const sortedCountry = [...countries, newCountry].sort(
       (a, b) => b.gold - a.gold
     );
-    setCountries(sortedCountry);
+
+    const existCountry = countries.find(function (listCountry) {
+      return listCountry.name === country;
+    });
+
+    if (existCountry) {
+      alert("이미 추가된 국가입니다. 확인해주세요!");
+    } else {
+      setCountries(sortedCountry);
+      alert(`${newCountry.name}이 추가되었습니다!`);
+    }
     init();
   };
 
@@ -57,12 +67,12 @@ function App() {
 
     // state에 있는 나라이름으로 현재 존재하는 countries 배열에서 찾기(find => 내가 수정하려고 하는 대상 국가)
     const targetCountry = countries.find(function (country) {
-      return country.name === country.name;
+      return country.name === formValues.country;
     });
-
     if (!targetCountry) {
       alert("일치하는 국가가 없습니다!");
       init();
+      return;
     }
 
     // targetCountry의 이름과 일치 => gold, silver, bronze state에 맞게 수정하여 return / 일치X => 그대로 내보내(return)
@@ -79,19 +89,23 @@ function App() {
       }
     });
     setCountries(newCountries);
+    alert(`${targetCountry.name}의 메달 개수가 변경되었습니다!`);
     init();
   };
 
   // ===삭제===
   const handleDeleteCountry = (id) => {
     const deletedCountry = countries.filter((country) => country.id !== id);
-    setCountries(deletedCountry);
+    if (window.confirm("삭제하시겠습니까?")) {
+      setCountries(deletedCountry);
+      return;
+    }
   };
 
   return (
     <div className="container">
       <h1>2024 Paris Olympic</h1>
-      <Add
+      <InputForm
         formValues={formValues}
         handleChange={handleChange}
         handleAddCountry={handleAddCountry}
