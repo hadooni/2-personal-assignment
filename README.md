@@ -2,33 +2,58 @@
 
 2024 파리 올림픽에서 각 나라가 획득한 메달 수를 추적하는 메달 트래커 입니다.
 
+## 작업 기간
+2024.08.08.(목) ~ 2024.08.14.(수)
+
 ## 프로젝트 구조
-- Vite로 React 프로젝트 셋업
-- index.html 하나의 파일안에 id 값이 root 인 div 태그에 요소들 연결
-- index.html 파일에서는 main.jsx 파일을 사용하고, main.jsx 파일에서는 App.jsx 파일을 불러와 사용
+```
+.
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package.json
+├── public
+│   └── vite.svg
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── components
+│   │   ├── Countries.jsx
+│   │   └── InputForm.jsx
+│   ├── index.css
+│   └── main.jsx
+├── vite.config.js
+└── yarn.lock
+```
 
-## 구현 기능
-- 제출 폼 UI 구현
-- 매달 집계 CRUD 구현
-- **Create**: 새로운 나라와 그 나라가 획득한 메달 수를 추가합니다.
-- **Read**: 나라별 메달 집계 리스트를 보여줍니다.
-- **Update**: 기존에 추가된 나라의 메달 수를 수정할 수 있습니다.
-- **Delete**: 나라 정보를 삭제할 수 있습니다.
-- 금메달 수를 기준으로 메달 집계 내림차순 정렬
-
-## 개발 환경
-- HTML,CSS
-- React js
-- Vite
-
-## 앱 구성
+## 주요 기능
+### 1. 추가
 <img width="1387" alt="image" src="https://github.com/user-attachments/assets/0cfccfd0-abf6-4db5-b398-a2fd3767b419">
 
-- 국가명, 금메달, 은메달, 동메달 각 인풋 창에 값을 입력하고 국가추가 버튼을 클릭하면 아래에 입력값을 출력합니다.
+- 국가명, 금메달, 은메달, 동메달 각 input 창에 값을 입력하고 국가추가 버튼을 클릭하여 입력값을 출력합니다.
 - 국가명을 입력하지 않고 추가버튼 클릭 시 입력을 요청하는 alert 창이 조회됩니다.
-  
-<img width="1406" alt="image" src="https://github.com/user-attachments/assets/c91c72ce-e74d-4a5a-a84b-d4afcbc6477b">
+- 동일한 국가를 입력할 시 "이미 추가된 국가입니다." alery 창이 조회되고 새로운 국가를 입력하면 국가가 추가됩니다.
 
-- 이미 추가된 국가와 동일한 국가의 메달 수를 입력하여 업테이트 버튼 클릭 시 새로 입력한 값으로 변경이 됩니다.
+### 2. 읽기
+<img width="1379" alt="image" src="https://github.com/user-attachments/assets/ab55a0cc-08aa-487a-b311-95e30a12c92f">
+
+- 입력한 국가명, 메달 개수들이 추가되어 보여줍니다.
+
+### 3. 수정
+<img width="1354" alt="image" src="https://github.com/user-attachments/assets/cae6e1dd-772c-4255-9308-da8ab2c5f972">
+
+- 기존에 추가된 국가와 동일한 국가의 메달 수를 버튼 클릭 하여 수정할 수 있습니다.
+
+### 4. 삭제
+<img width="1354" alt="image" src="https://github.com/user-attachments/assets/c2a89862-6b9a-4d92-881f-4d8673798ee1">
+<img width="1354" alt="image" src="https://github.com/user-attachments/assets/25128743-09a4-4120-a4ac-10990660db88">
+
+- 삭제버튼 클릭 시 삭제 확인, 취소 경고창이 나타나며 확인을 클릭하면 해당 국가가 삭제됩니다.
+
+### 5. 정렬
+![image](https://github.com/user-attachments/assets/90152cd9-dd29-409a-a8cf-e308b2585327)
+
 - 리스트에 여러 나라들이 있을 때 금메달 수를 기준으로 내림차순 정렬하여 화면에 표시됩니다.
-- 삭제버튼 클릭 시 해당 국가는 삭제됩니다.
+  
